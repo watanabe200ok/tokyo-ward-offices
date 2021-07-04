@@ -11,7 +11,7 @@ import watanabe200ok.route.core.RouteCaluculator;
 import watanabe200ok.route.model.Node;
 import watanabe200ok.route.model.Route;
 
-public class TokyoWordOfficesRouteCaluculator {
+public class TokyoWardOfficesRouteCaluculator {
     @Option(name="-p", aliases="--parents", usage="number of parents")
     private int parentSize = 2000;
     @Option(name="-c", aliases="--childlen", usage="number of childlen")
@@ -31,18 +31,18 @@ public class TokyoWordOfficesRouteCaluculator {
             final int numberOfGenerations) {
         final RouteCaluculator caluculator = new RouteCaluculator();
         final Route bestRoute = caluculator.execute(
-                new TokyoWordAggregator(), parentSize, childSize, otherSize, swapRatio, numberOfGenerations);
+                new TokyoWardAggregator(), parentSize, childSize, otherSize, swapRatio, numberOfGenerations);
 
         System.out.println("==================================");
         System.out.println(bestRoute.getDistance());
 
-        final List<Node> sorted = sort(bestRoute.getRoute(), TokyoWord.千代田);
+        final List<Node> sorted = sort(bestRoute.getRoute(), TokyoWard.千代田);
         System.out.println(sorted);
         Collections.reverse(sorted);
-        System.out.println(sort(sorted, TokyoWord.千代田));
+        System.out.println(sort(sorted, TokyoWard.千代田));
     }
 
-    private List<Node> sort(final List<Node> original, final TokyoWord firstWord) {
+    private List<Node> sort(final List<Node> original, final TokyoWard firstWord) {
         final int indexOfChiyoda = original.indexOf(firstWord);
         final List<Node> normalized = new ArrayList<>(original.subList(indexOfChiyoda, original.size()));
         if (indexOfChiyoda != 0) {
@@ -52,7 +52,7 @@ public class TokyoWordOfficesRouteCaluculator {
     }
 
     public static void main(String[] args) {
-        final TokyoWordOfficesRouteCaluculator tokyoWordOffices = new TokyoWordOfficesRouteCaluculator();
+        final TokyoWardOfficesRouteCaluculator tokyoWordOffices = new TokyoWardOfficesRouteCaluculator();
         tokyoWordOffices.doMain(args);
     }
 

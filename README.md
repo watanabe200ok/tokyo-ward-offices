@@ -1,9 +1,9 @@
-# tokyo-word-offices
+# tokyo-ward-offices
 
 ![](https://img.shields.io/badge/Java-007396.svg?logo=Java&style=plastic)
 ![](https://img.shields.io/badge/Gradle-02303A.svg?logo=Gradle&style=plastic)
 
-![](./docs/images/tokyo-words.png)
+![](./docs/images/tokyo-wards.png)
 上記の地図は[白地図専門店](https://www.freemap.jp/)からダウンロードさせて頂いた白地図もとに作成しました。
 
 ## What

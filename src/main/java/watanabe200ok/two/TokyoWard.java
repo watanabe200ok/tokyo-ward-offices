@@ -5,7 +5,7 @@ import watanabe200ok.route.model.Node;
 /**
  * 東京23区を列挙します。
  */
-public enum TokyoWord implements Node {
+public enum TokyoWard implements Node {
     千代田,
     中央,
     港,

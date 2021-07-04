@@ -17,13 +17,13 @@ import watanabe200ok.route.model.NodeAggregator;
  * 東京23区を集約するモデルです。
  *
  */
-public class TokyoWordAggregator implements NodeAggregator {
-    private final Logger logger = LoggerFactory.getLogger(TokyoWordAggregator.class);
+public class TokyoWardAggregator implements NodeAggregator {
+    private final Logger logger = LoggerFactory.getLogger(TokyoWardAggregator.class);
     private final String DATA_RESOURCE_NAME = "data.csv";
-    private final List<Node> nodes = List.of(TokyoWord.values());
+    private final List<Node> nodes = List.of(TokyoWard.values());
     private final double[][] distances;
 
-    TokyoWordAggregator() {
+    TokyoWardAggregator() {
         try (final InputStream is = getClass().getResourceAsStream(DATA_RESOURCE_NAME);
                 final InputStreamReader isr = new InputStreamReader(is);
                 final CSVReader reader = new CSVReader(isr)) {
@@ -36,7 +36,7 @@ public class TokyoWordAggregator implements NodeAggregator {
 
     static double[][] toTable(final List<String[]> allLines) {
         return allLines.stream()
-            .map(TokyoWordAggregator::toDouble)
+            .map(TokyoWardAggregator::toDouble)
             .toArray(double[][]::new);
     }
 
